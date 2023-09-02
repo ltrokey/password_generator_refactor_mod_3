@@ -1,5 +1,5 @@
 // Assignment Code
-const generateBtn = document.getElementById('generateBtn')
+const generateBtn = document.getElementById('generate')
 
 
 // Write password to the #password input
@@ -17,7 +17,13 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
     var charactersLength = prompt('Please enter the number of characters you want. (Must be a min. of 8 characters & a maximum of 128.')
-
+    if (charactersLength<8) {
+        alert ('Invalid - Characters entered must be greater than 8.')
+        return
+    } else if (charactersLength>128) {
+        alert ('Invalid - Characters entered must be less than 128.')
+        return
+    }
     var includeNumbers = confirm('Do you want numbers included?')
 
     var includeLowerCases = confirm('Do you want to include lowercase?')
@@ -25,6 +31,13 @@ function generatePassword() {
     var includeUpperCases = confirm('Do you want to include uppercase?')
 
     var includeSymbolCharacters = confirm('Do you want to include symbols?')
+
+    var optionsArray = [includeNumbers, includeLowerCases, includeUpperCases, includeSymbolCharacters]
+
+    if (!optionsArray.includes(true)) {
+        alert ('Invalid - Please select at least one option of Numbers, Lowercase, Uppercase, or Symbols.')
+        return
+    }
 
     let generatedPassword = ''
     
