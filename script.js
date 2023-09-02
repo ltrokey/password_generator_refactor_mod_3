@@ -1,8 +1,6 @@
-// Assignment Code
+
 const generateBtn = document.getElementById('generate')
 
-
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -11,19 +9,22 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
 
 function generatePassword() {
     var charactersLength = prompt('Please enter the number of characters you want. (Must be a min. of 8 characters & a maximum of 128.')
-    if (charactersLength<8) {
+    var charactersNum =  Number(charactersLength)
+    if (charactersLength < 8) {
         alert ('Invalid - Characters entered must be greater than 8.')
         return
-    } else if (charactersLength>128) {
+    } else if (charactersLength > 128) {
         alert ('Invalid - Characters entered must be less than 128.')
-        return
+        return 
+    } else if (isNaN(charactersNum)) {
+      alert ('Invalid - Characters entered must be a number.')
+      return
     }
+
     var includeNumbers = confirm('Do you want numbers included?')
 
     var includeLowerCases = confirm('Do you want to include lowercase?')
@@ -61,7 +62,6 @@ function generatePassword() {
     return result;
 
 }
-
 
 function getRandomNumber() {
     var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
