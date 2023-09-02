@@ -56,9 +56,9 @@ function generatePassword() {
       }
     }
     
-    var finalPassword = generatedPassword.slice(0, charactersLength);
+    var result = generatedPassword.slice(0, charactersLength);
     
-    return finalPassword;
+    return result;
 
 }
 
