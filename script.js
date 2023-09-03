@@ -9,6 +9,18 @@ function writePassword() {
 
 }
 
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const lowerCases = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+const upperCases = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+const symbolCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
+'=', '<', '>', '/']
+
+
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
@@ -44,44 +56,25 @@ function generatePassword() {
     
     for(let i = 0; i < charactersLength; i += 1) {
       if (includeNumbers) {
-        generatedPassword += getRandomNumber()
+        generatedPassword += getRandom(numbers)
       } 
       if (includeSymbolCharacters) {
-        generatedPassword += getRandomSymbol()
+        generatedPassword += getRandom(symbolCharacters)
       }
       if (includeLowerCases) {
-        generatedPassword += getRandomLower()
+        generatedPassword += getRandom(lowerCases)
       }
       if (includeUpperCases) {
-        generatedPassword += getRandomUpper()
+        generatedPassword += getRandom(upperCases)
       }
     }
     
     var result = generatedPassword.slice(0, charactersLength);
     
     return result;
-
 }
 
-function getRandomNumber() {
-    var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    return numbers[Math.floor(Math.random()*numbers.length)]
-  }
+function getRandom(arr) {
 
-function getRandomLower() {
-    var lowerCases = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 
-    'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    return lowerCases[Math.floor(Math.random()*lowerCases.length)]
-  }
-  
-  function getRandomUpper() {
-    var upperCases = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
-    'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    return upperCases[Math.floor(Math.random()*upperCases.length)]
-  }
-  
-  function getRandomSymbol() {
-    var symbolCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
-    '=', '<', '>', '/']
-    return symbolCharacters[Math.floor(Math.random()*symbolCharacters.length)]  
+    return arr[Math.floor(Math.random()*arr.length)]
   }
