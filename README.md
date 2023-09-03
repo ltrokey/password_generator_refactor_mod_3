@@ -69,4 +69,4 @@ SOFTWARE.
 
 ## Features
 
-I added error handling for edge cases such as a user enters too many or not enough password characters and if they don't select any options.  
+I added error handling for edge cases such as a user enters too many or not enough password characters, any type of character other than a number and if they don't select any options.  
