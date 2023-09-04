@@ -4,8 +4,6 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 The JavaScript Password Generator project was driven by the goal of creating a user-friendly tool for generating strong passwords based on individual preferences. It offers customization options for lowercase, uppercase, symbols, and numbers. The project enhances user security awareness by providing reliable password generation. Future plans may include further customization features and integration with password management tools to continuously improve user online security. During the project, I learned the importance of pseudo coding and implementing control structures like loops and conditional statements.
 
 ## Installation
